@@ -1,19 +1,60 @@
 .help
-
 .break
-
 .clear
-
 .exit  退出repl
-
 .help
-
 .load   .load cmd.log
-
 .save   保存命令   .save cmd.log
 
 切换盘符  e:
+/----------------------/
 
+Node的全局对象
+
+__filename
+注意此属性并不是全局对象的属性，而只是node在我们注入模块的参数，可以在模块内直接使用. _filename 表示当前正在执行的脚本的文件名。
+它将输出文件所在位置的绝对路径
+
+__dirname
+注意此属性并不是全局对象的属性，而只是node为我们注入模块的参数，可以在模块内直接使用. __dirname 表示当前执行脚本所在的目录。
+
+/----------------------/
+
+fs.readdir//传递两个参数 err 和 files，files是一个包含 “ 指定目录下所有文件名称的” 数组。
+fs.unlink//删除文件
+fs.mkdir//以异步的方式创建文件目录。如果目录已存在，将抛出异常。
+fs.rmdir
+fs.exists//判断一个文件或目录是否存在
+fs.readdir//读取目录下面的文件列表，files是一个包含 “ 指定目录下所有文件名称的” 数组
+fs.stat//读取的文件信息，回调函数接受err,stats,stats.isDirectory()判断是否是一个目录；stats.isFile()判断是否是一个文件
+
+watchfile方法监听一个文件，如果该文件发生变化，就会自动触发回调函数。
+unwatchfile方法用于解除对文件的监听。
+
+createReadStream()//往往用于打开大型的文本文件，创建一个读取操作的数据流。所谓大型文本文件，指的是文本文件的体积很大，
+读取操作的缓存装不下，只能分成几次发送，每次发送会触发一个data事件，发送结束会触发end事件。
+createWriteStream()//创建一个写入数据流对象，该对象的write方法用于写入数据，end方法用于结束写入操作。
+
+path.resolve//相当于不断的调用系统的cd命令
+path.basename//提取出用 ‘/' 隔开的path的最后一部分；参数：p 要处理的path   ext 要过滤的字符
+path.extname//返回path路径文件扩展名，如果path以 ‘.' 为结尾，将返回 ‘.'，如果无扩展名 又 不以'.'结尾，将返回空值
+path.sep//路径分隔符
+path.delimiter//环境变量分隔符
+
+/----------------------/
+install命令总是安装模块的最新版本，如果要安装模块的特定版本，可以在模块名后面加上@和版本号。
+
+--save：模块名将被添加到dependencies，可以简化为参数-S。 --save-dev: 模块名将被添加到devDependencies，可以简化为参数-D。
+
+$ npm update [package name]
+$ npm update -global [package name]
+$ npm uninstall [package name]
+$ sudo npm uninstall [package name] -global
+
+
+/----------------------/
+url.parse//把一个字符串转成对象
+url.format//把一个对象转成字符串
 
 
 
@@ -24,6 +65,7 @@ process.cwd()：运行node的工作目录，可以使用  cd /d 修改工作目录。
 require.main.filename：用node命令启动的module的filename, 如 node xxx，这里的filename就是这个xxx。
 require()方法的坐标路径是：module.filename；fs.readFile()的坐标路径是：process.cwd()。
 
+/----------------------/
 process对象提供以下方法：
 
 process.exit()：退出当前进程。
@@ -31,6 +73,8 @@ process.cwd()：返回运行当前脚本的工作目录的路径。_
 process.chdir()：改变工作目录。
 process.nextTick()：将一个回调函数放在下次事件循环的顶部。
 
+process.argv
+是命令行参数数组，第一个元素是node.exe可执行文件的路径,第二个参数是执行的脚本文件所有路径，从第三个元素开始每个参数是一个运行时传入的参数
 
 url.parse
 url.format
