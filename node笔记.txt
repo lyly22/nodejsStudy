@@ -81,3 +81,7 @@ url.format
 
 querystring.parse(str,'@','=')
 querystring.stringify(obj,'@','=')
+
+mime.lookup()
+
+curl http:localhost:8080/clock.html
