@@ -7,6 +7,108 @@
 .save   保存命令   .save cmd.log
 
 切换盘符  e:
+
+mime.lookup()
+
+curl http:localhost:8080/clock.html-->git bash
+
+global == window 全局对象
+module  当前模块对象
+exports 导出对象
+require 加载模块的方法
+__dirname  当前模块所在的目录的绝对路径
+__firname  当前模块的绝对路径
+
+console.trace();//显示当前的调用堆栈
+
+process.stdout.write('hello');相当于console.log();
+process.stdin.on('data',function(data){  监听控制台，模拟控制台输出
+    console.log(data.toString());
+}
+
+process.nextTick放在当前队列的底部
+setTimeout放在下个队列的顶部
+process.nextTick>setTimeout>setImmediate>异步IO
+
+util.inherits(constructor, superConstructor)是一个实现对象间原型继承的函数。
+
+util.inspect(object,[showHidden],[depth],[colors])是一个将任意对象转换 为字符串的方法，通常用于调试和错误输出。它至少接受一个参数 object，即要转换的对象。
+showHidden 是一个可选参数，如果值为 true，将会输出更多隐藏信息。
+depth 表示最大递归的层数，如果对象很复杂，你可以指定层数以控制输出信息的多 少。如果不指定depth，默认会递归2层，指定为 null 表示将不限递归层数完整遍历对象。 
+color 值为 true，输出格式将会以ANSI 颜色编码，通常用于在终端显示更漂亮 的效果。
+特别要指出的是，util.inspect 并不会简单地直接把对象转换为字符串，即使该对 象定义了toString 方法也不会调用。
+
+util.isArray(object)
+
+util.isRegExp(object)
+
+util.isDate(object)
+
+util.isError(object)
+
+缓存
+main
+resolve
+cache
+delete cache
+
+require.cache
+require.cache[require.resolve('./a')]
+
+module
+module.id  模块的绝对路径
+module.filename模块的文件名、模块的绝对路径
+module.loaded  是否加载完成
+module.parent  父模块，即调用当前模块的模块对象
+module.children 子模块，即当前模块require的模块对象
+module.exports  导出对象
+module.paths    模块的查找路径
+
+npm search 
+npm view 
+npm install -g express
+npm root -g  查看全局安装路径
+npm config set prefix 修改全局路径
+npm list 显示当前目录下所有包
+npm list -g  显示全局下所有包
+npm uninstall gulp 卸载本地包
+npm uninstall gulp -g 卸载全局包
+npm update gulp  更新本地包
+npm update -g gulp   更新全局包
+npm update 更新当前目录下所有的包
+npm update -g 更新全局所有的包
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /----------------------/
 
 Node的全局对象
@@ -81,7 +183,3 @@ url.format
 
 querystring.parse(str,'@','=')
 querystring.stringify(obj,'@','=')
-
-mime.lookup()
-
-curl http:localhost:8080/clock.html-->git bash

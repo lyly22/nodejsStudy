@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2016-05-24 21:32:26
 * @Last Modified by:   Administrator
-* @Last Modified time: 2016-05-24 22:35:20
+* @Last Modified time: 2016-05-25 10:51:34
 */
 
 'use strict';
@@ -26,15 +26,15 @@ function serve(req,res){
 			res.end();
 		});
 	}else if(pathname==='/clock'){
-		var i=0;
-		var timer=setInterval(function(){
-			res.write(new Date().toString());
-			i++;
-			if(i===5){
-				clearInterval(timer);
-				res.end();
-			}
-		},1000);
+		var counter =0;
+    	var int = setInterval(function(){
+	        res.write(new Date().toString());
+	        counter++;
+	        if(counter==5){
+	            clearInterval(int);
+	            res.end();
+	        }
+    	},1000);
 	}else{
 		insert(pathname,res);
 	}
