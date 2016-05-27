@@ -78,7 +78,18 @@ npm update -g gulp   更新全局包
 npm update 更新当前目录下所有的包
 npm update -g 更新全局所有的包
 
+锁定版本号
+npm shrinkwrap 如果报错说明有模块没有放在packgejson依赖里
+npm prune 将没有写进依赖的模块移除
 
+npm adduser注册
+
+将其他进制转成十进制
+parseInt('11',2);将二进制的11转成10进制
+parseInt('11',8);将八进制的11转成10进制
+将十进制转成其他进制
+(11).toString(2);将十进制11转成2进制
+(11).toString(8);将十进制11转成8进制
 
 
 
