@@ -91,16 +91,13 @@ parseInt('11',8);将八进制的11转成10进制
 (11).toString(2);将十进制11转成2进制
 (11).toString(8);将十进制11转成8进制
 
-
-
-
-
-
-
-
-
-
-
+buf.write()
+buf.toString()
+buf.toJSON()
+buffer1.compare(buffer2)
+buffer1.copy(buffer2);buffer2拷贝buffer1
+buffer2 = buffer1.slice(0,2);
+Buffer.concat(buf1,buf2)
 
 
 
