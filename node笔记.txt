@@ -8,7 +8,7 @@
 
 切换盘符  e:
 
-mime.lookup()
+mime.lookup()文件类型
 
 curl http:localhost:8080/clock.html-->git bash
 
@@ -97,7 +97,11 @@ buf.toJSON()
 buffer1.compare(buffer2)
 buffer1.copy(buffer2);buffer2拷贝buffer1
 buffer2 = buffer1.slice(0,2);
-Buffer.concat(buf1,buf2)
+Buffer.concat(buf1,buf2);
+
+var StringDecoder=require('string_decoder').StringDecoder;
+var decoder=new StringDecoder();
+decoder.write()
 
 
 
